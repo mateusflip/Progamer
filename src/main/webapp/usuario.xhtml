@@ -26,7 +26,9 @@
 			<div class="p-field p-grid">
 			    <label for="description" class="p-col-fixed" style="width:100px">Email</label>
 			    <div class="p-col">
-			        <p:inputText id="email" value="#{usuarioBean.usuario.email}" validatorMessage="O campo Email é obrigatório e deve conter pelo menos 10 carácteres ">
+			        <p:inputText id="email" value="#{usuarioBean.usuario.email}" validatorMessage="O campo Email é obrigatório e deve conter pelo menos 10 carácteres e @">
+			        	<f:validateRegex
+								pattern="[\w\.-]*[a-zA-Z0-9_]@[\w\.-]*[a-zA-Z0-9]\.[a-zA-Z][a-zA-Z\.]*[a-zA-Z]" />
 			        	<f:validateLength minimum="10" maximum="150" />
 			        	<f:ajax event="blur" render="messages" />
 			        </p:inputText>
