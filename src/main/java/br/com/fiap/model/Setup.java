@@ -14,6 +14,8 @@ public class Setup {
 	private Long id;
 	private String name;
 	private String description;
+	
+
 	private BigDecimal price;
 
 	public String getName() {
@@ -40,6 +42,13 @@ public class Setup {
 		this.price = price;
 	}
 
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
 	@Override
 	public String toString() {
 		return "Setup [name=" + name + ", description=" + description + ", price=" + price + "]";
