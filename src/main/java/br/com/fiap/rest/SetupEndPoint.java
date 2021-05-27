@@ -57,6 +57,6 @@ public class SetupEndPoint {
 		setup.setId(id);
 		dao.update(setup);
 		return Response.status(Response.Status.OK).entity(setup).build();
-	}
+	} 
 
 }
