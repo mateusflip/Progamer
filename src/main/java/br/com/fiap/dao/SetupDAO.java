@@ -40,6 +40,17 @@ public class SetupDAO {
 		manager.getTransaction().commit();
 		
 		manager.close();
-	}
+		
+		
+	}public void deleteSetup(Setup setup) {
+        EntityManager manager= JPAUtil.getEntityManager();
+        manager.getTransaction().begin();
+        setup = manager.merge(setup);
+        manager.remove(setup);
+        manager.flush();
+        System.out.println("Deletando Setup ID "+setup.getId()+" --- NOME: "+setup.getName());
+        manager.getTransaction().commit();
+        manager.close();
+    }
 
 }

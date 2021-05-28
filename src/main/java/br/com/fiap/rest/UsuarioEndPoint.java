@@ -3,6 +3,7 @@ package br.com.fiap.rest;
 import java.util.List;
 
 import javax.ws.rs.Consumes;
+import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.PUT;
@@ -60,6 +61,16 @@ public class UsuarioEndPoint {
 	public Response update(@PathParam("id") int id, Usuario usuario) {
 		usuario.setId(id);
 		dao.update(usuario);
+		return Response.status(Response.Status.OK).entity(usuario).build();
+	}
+	
+	//Deletar
+	@DELETE
+	@Path("{id}")
+	@Consumes(MediaType.APPLICATION_JSON)
+	public Response delete(@PathParam("id") int id, Usuario usuario) {
+		usuario.setId(id);
+		dao.delete(id);
 		return Response.status(Response.Status.OK).entity(usuario).build();
 	}
 	

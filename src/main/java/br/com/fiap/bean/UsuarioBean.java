@@ -36,6 +36,13 @@ public class UsuarioBean {
 			
 	}
 	
+	public String logout() {
+		System.out.println("Estou entrando no método de deslogar");
+		FacesContext context = FacesContext.getCurrentInstance();
+		context.getExternalContext().getSessionMap().remove("usuario").equals(usuario);
+		return "login?faces-redirect=true";
+	}
+	
 	public void save() {
 		new UsuarioDAO().save(this.usuario);
 		

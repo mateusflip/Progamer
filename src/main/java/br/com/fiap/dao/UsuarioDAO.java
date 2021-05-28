@@ -58,4 +58,28 @@ public class UsuarioDAO {
 		}
 		return true;
 	}
+	/*
+	public Usuario delete(Integer id) {
+		EntityManager manager = JPAUtil.getEntityManager();
+		Usuario usuario = manager.find(Usuario.class, id);
+		
+		try {
+			
+			manager.getTransaction().begin();
+			manager.remove(usuario);
+			manager.getTransaction().commit();
+			
+					
+		
+		}catch(Exception e){
+			System.out.println(e);
+		}finally {
+			manager.close();
+		}
+		
+		return usuario;
+		
+	}*/
+	
+	
 }
